@@ -42,6 +42,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 gem 'nokogiri'
+gem "libxml-ruby", "~> 2.6.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
