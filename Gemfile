@@ -4,6 +4,7 @@ ruby '1.9.3'
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.1'
 gem 'rspec-rails', '2.11.0'
+gem 'rails_12factor'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
