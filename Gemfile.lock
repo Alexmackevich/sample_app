@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
-  branch: rails4
-  specs:
-    devise (2.2.4)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,9 +25,11 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    annotate (2.5.0)
+      rake
     arel (4.0.0)
     atomic (1.1.10)
-    bcrypt-ruby (3.1.1)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.1.0.0)
     builder (3.1.4)
     capybara (1.1.2)
@@ -58,6 +49,11 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
+    devise (3.0.0.rc)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -85,6 +81,8 @@ GEM
     orm_adapter (0.4.0)
     pg (0.12.2)
     polyglot (0.3.3)
+    protected_attributes (1.0.3)
+      activemodel (>= 4.0.0, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -173,13 +171,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate (= 2.5.0)
+  bcrypt-ruby (= 3.0.1)
   bootstrap-sass (= 2.1)
   capybara (= 1.1.2)
   coffee-rails (~> 4.0.0)
-  devise!
+  devise (= 3.0.0.rc)
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.12.2)
+  protected_attributes
   rails (= 4.0.0)
   rails_12factor
   rspec-rails (= 2.11.0)
