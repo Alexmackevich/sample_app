@@ -170,7 +170,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-  nokogiri
   pg (= 0.12.2)
   protected_attributes
   rails (= 4.0.0)
