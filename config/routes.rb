@@ -1,7 +1,15 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
+  get "users/new"
+  root :to => 'static_pages#home' 
+
+  # sign up page
+  get "signup" => 'users#new'
+  
+  #static pages
+  get "about" => "static_pages#about"
+  get "help" => "static_pages#help"
+  get 'contact' => 'static_pages#contact'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -49,7 +57,7 @@ SampleApp::Application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
-root :to => 'static_pages#home'
+
   # Example resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
