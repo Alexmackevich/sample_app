@@ -44,6 +44,21 @@ describe "User pages" do
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
+
+      # describe "after submission" do  #testi dlia soobshenii ob oshibkah
+      #   before { click_button submit }
+
+      #   it { should have_selector('title', text: 'Sign up') }
+      #   it { should have_content('error') }
+      # end
+
+      # describe "after saving the user" do  # testi dlia opisania povedenia posle sohranenia v deistvii create
+      #   before { click_button submit }
+      #   let(:user) { User.find_by_email('user@example.com') }
+
+      #   it { should have_selector('title', text: user.name) }
+      #   it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+      # end
     end
   end
 end
