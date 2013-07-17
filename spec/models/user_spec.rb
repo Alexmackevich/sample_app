@@ -2,11 +2,12 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  password_digest :string(255)
 #
 
 require 'spec_helper'
@@ -92,15 +93,17 @@ describe User do
     before { @user.password_confirmation = nil }
     it { should_not be_valid }
   end
-  # Authentication
+ 
     #validaciia na nalichie min 6 znakov v parole
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
     end
+  
+  # Authentication
   describe "return value of authenticate method" do
-  before { @user.save }
-  let(:found_user) { User.find_by_email(@user.email) }
+    before { @user.save }
+    let(:found_user) { User.find_by_email(@user.email) }
 
   # Sovpadenie parolia
   describe "with valid password" do

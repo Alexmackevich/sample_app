@@ -10,6 +10,7 @@ gem 'rails_12factor'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'annotate', '2.5.0'
+	gem 'factory_girl_rails', '4.1.0'
 end
 
 # Use SCSS for stylesheets
