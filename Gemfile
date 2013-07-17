@@ -8,7 +8,7 @@ gem 'rspec-rails', '2.11.0'
 gem 'rails_12factor'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3', '1.3.5'
+	gem 'sqlite3'
 	gem 'annotate', '2.5.0'
 	gem 'factory_girl_rails', '4.1.0'
 end
@@ -35,7 +35,7 @@ gem 'protected_attributes'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 gem 'thin'
-gem 'pg', '0.12.2'
+#gem 'pg', '0.12.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
