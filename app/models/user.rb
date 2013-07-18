@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 6 }# validates for length of the passowrd
 	validates :password_confirmation, presence: true		  #presence validation for the password confirmation
 	
-	validates :name, presence: true
-	validates :email, presence: true
+	# validates :name, presence: true
+	# validates :email, presence: true
 	private
 
     def create_remember_token
