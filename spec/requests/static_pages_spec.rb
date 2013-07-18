@@ -86,18 +86,11 @@ describe "Static pages" do
     end
   
 
-  describe "Help page" do              # Tests for Help page
-     before { visit help_path }
-
-    it { should have_selector('h1',    text: 'Help') }
-    it { should have_selector('title', text: full_title('Help')) }
-  end
-
   describe "About page" do             # Tests for About page
   before { visit about_path }
 
     it { should have_selector('h1',    text: 'About') }
-    it { should have_selector('title', text: full_title('About Us')) }
+    it { should have_selector('title', text: full_title('About')) }
   end
 
   describe "Contact page" do           # Test for Contact page

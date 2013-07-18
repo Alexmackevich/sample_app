@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	
 	before_save { |user| user.email = email.downcase } # downcase the email attribute before saving the user to the database 
+	before_save :create_remember_token # Rails ishet etot metod i vipolniaet ego pered sohraneniem
 
 	validates :name,  presence: true, length: { maximum: 50 } # validates for length of name
 
@@ -25,6 +26,11 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 6 }# validates for length of the passowrd
 	validates :password_confirmation, presence: true		  #presence validation for the password confirmation
 	
-	# validates :name, presence: true
-	# validates :email, presence: true
+	validates :name, presence: true
+	validates :email, presence: true
+	private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end
