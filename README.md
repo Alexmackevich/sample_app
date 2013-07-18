@@ -1,2 +1,1 @@
-sample_app
-==========
+Finished user sign up
