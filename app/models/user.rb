@@ -13,7 +13,8 @@
 class User < ActiveRecord::Base
 	attr_accessible :name, :email, :password, :password_confirmation
 	has_secure_password
-	
+	has_many :microposts, dependent: :destroy # udalenie postov po defaultu v sluchae udalenia ih usera
+
 	before_save { |user| user.email = email.downcase } # downcase the email attribute before saving the user to the database 
 	before_save :create_remember_token # Rails ishet etot metod i vipolniaet ego pered sohraneniem
 
@@ -28,6 +29,13 @@ class User < ActiveRecord::Base
 	
 	# validates :name, presence: true
 	# validates :email, presence: true
+	
+
+	def feed
+   	 # Это предварительное решение. См. полную реализацию в "Following users".
+    	Micropost.where("user_id = ?", id)
+  	end
+
 	private
 
     def create_remember_token

@@ -1,10 +1,10 @@
-<% if @user.errors.any? %>  <!--obrabotka nalichia oshibok-->
+<% if object.errors.any? %>  <!--obrabotka nalichia oshibok-->
   <div id="error_explanation"> <!--stilizacia soobshenia ob oshibke s pomoshu CSS -->
     <div class="alert alert-error">
       The form contains <%= pluralize(@user.errors.count, "error") %>.  <!--slovo "error" v pravil'noi forme -->
     </div>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %> <!-- vivod kazhdogo soobshednia ob oshibke -->
+    <% object.errors.full_messages.each do |msg| %> <!-- vivod kazhdogo soobshednia ob oshibke -->
       <li>* <%= msg %></li>
     <% end %>
     </ul>
