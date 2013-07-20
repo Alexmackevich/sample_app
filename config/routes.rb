@@ -1,13 +1,22 @@
 SampleApp::Application.routes.draw do
   #get "users/new"
   resources :sessions, only: [:new, :create, :destroy]
+  
   resources :microposts, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
+  
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+  root :to => 'static_pages#home' 
+
   post '/signup',  to: 'users#new'
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy', via: :delete
-  
-  resources :users
-  root :to => 'static_pages#home' 
 
   # sign up page
   get "signup" => 'users#new'
