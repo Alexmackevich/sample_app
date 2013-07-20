@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy#udalenie vzaimootnoshenii po defaultu pri udalenii usera
 	has_many :followed_users, through: :relationships, source: :followed
 
-	 has_many :reverse_relationships, foreign_key: "followed_id",
+	has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name:  "Relationship",
                                    dependent:   :destroy
 
-   has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :followers, through: :reverse_relationships, source: :follower
 
 	before_save { |user| user.email = email.downcase } # downcase the email attribute before saving the user to the database 
 	before_save :create_remember_token # Rails ishet etot metod i vipolniaet ego pered sohraneniem
@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   	end
 
   	def unfollow!(other_user)
-    relationships.find_by_followed_id(other_user.id).destroy
+    	relationships.find_by_followed_id(other_user.id).destroy
  		end
 
 	private
