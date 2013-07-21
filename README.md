@@ -1,1 +1,1 @@
-mackevich-sampleapp.herokuapp.com
+https://mackevich-sampleapp.herokuapp.com/
